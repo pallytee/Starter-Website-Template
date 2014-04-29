@@ -93,3 +93,20 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+
+/* ==========================================================================
+   Wrapper
+   ========================================================================== */
+
+.wrapper-fixed{
+        max-width: $wrapper-width;
+        height: 100%;
+        padding: 0 1%;
+        @media only screen and (min-width: $lrg-bp){
+            padding: 0;
+        }
+}
+
+.wrapper-fluid{
+    max-width: 100%;
+}

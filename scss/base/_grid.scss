@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Base Grid System
+   ========================================================================== */
+
+// base grid styles
+
+.row{
+	@extend %clearfix;
+	padding: 0;
+	margin: 0;
+}
+
+[class*='col-']{
+	margin: $col-margin;
+	@include min-screen($sm-bp){
+		float: left;
+		margin: 0 0 1.6% 1%;
+	}
+	&:first-child{
+		margin-left: 0;
+	}
+}
+
+
+@include min-screen($extsm-bp){}// end extra small media query
+
+@include min-screen($sm-bp){}// end small media query
+
+@include min-screen($med-bp){
+	@for $i from 1 through $cols {
+		$val: (100% - (($cols - 1) * $col-margin)) / $cols;
+
+	  	.col-#{$i}-#{$cols} { 
+	  		width: ($val * $i) + ($col-margin * ($i - 1)); 
+	  	}
+	}
+}// end medium media query
+
+@include min-screen($lrg-bp){} // end large media query
+
+@include min-screen($extlrg-bp){} //end extra large media query

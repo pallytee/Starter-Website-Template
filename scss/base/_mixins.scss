@@ -7,3 +7,9 @@
     clear: both;
   }
 }
+
+@mixin min-screen($bp){
+	@media only screen and (min-width: $bp) {
+	@content
+	}
+}
